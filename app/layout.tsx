@@ -3,13 +3,14 @@
 import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import "./globals.css";
-
+import { ClerkProvider } from "@clerk/nextjs"
+import Provider from "@/app/provider";
 const appFont = DM_Sans({
   subsets: ['latin']
 })
 
 export const metadata: Metadata = {
-  title: "UI UX <Mock></Mock> App",
+  title: "UI UX Mock App",
   description: "Generate high quality UI UX",
 };
 
@@ -19,10 +20,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={appFont.className}>
-        {children}
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <body className={appFont.className}>
+          <Provider>
+            {children}
+          </Provider>
+        </body>
+      </html>
+    </ClerkProvider>
+    
   );
 }
