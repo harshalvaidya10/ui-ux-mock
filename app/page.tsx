@@ -3,13 +3,20 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { UserButton } from "@clerk/nextjs";
+import Header from "./_shared/Header";
+import Hero from "./_shared/Hero";
+
 
 export default function Home() {
   return (
     <div>
-      <h1>UI UX MOCK</h1>
-      <Button>Welcome to my website</Button>
-      <UserButton></UserButton>
+      <Header></Header>
+      <Hero></Hero>
+      <div className="absolute -top-40 -left-40 h-[500px] w-[500px] bg-purple-400/20 blur-[120px] rounded-full"></div>
+      <div className="absolute -top-20 -left-40 right-[-200px] h-[500px] w-[500px] bg-pink-400/20 blur-[120px] rounded-full"></div>
+      <div className="absolute bottom-[-200px] -left-1/3 h-[500px] w-[500px] bg-blue-400/20 blur-[120px] rounded-full"></div>
+      <div className="absolute -top-40 -left-1/2 h-[500px] w-[500px] bg-sky-400/20 blur-[120px] rounded-full"></div>
+
     </div>
   );
 }
