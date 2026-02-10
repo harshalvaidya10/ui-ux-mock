@@ -48,6 +48,7 @@ function Hero() {
         setLoading(false);
 
         //Navigate the Project route
+        router.push('/project/'+projectId);
     }
 
     return (
